@@ -69,8 +69,8 @@
       {
         "id": "$$cap_github_repo",
         "label": "GitHub Backup Repo",
-        "defaultValue": "",
-        "description": "GitHub backup repo (ornek: zakeGit/fabrika-backup). Bos birakilabilir."
+        "defaultValue": "zakeGit/DataraporBackupConfigs",
+        "description": "GitHub backup repo (ornek: zakeGit/DataraporBackupConfigs). Bos birakilabilir."
       }
     ],
     "instructions": {
