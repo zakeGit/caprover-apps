@@ -44,7 +44,7 @@
       {
         "id": "$$cap_api_url",
         "label": "NexBus API URL",
-        "defaultValue": "http://172.17.0.1:5000/api",
+        "defaultValue": "http://10.1.0.3:5000/api",
         "description": "Bu fabrikaya ait NexBus API adresi. Her fabrika icin FARKLI port/adres olmali."
       },
       {
