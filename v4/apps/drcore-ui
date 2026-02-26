@@ -1,58 +1,71 @@
-captainVersion: 4
-services:
-    $$cap_appname:
-        image: zakesoft/drcore:$$cap_drcore_version
-        volumes:
-            - $$cap_appname-data:/usr/src/app/src/assets/data
-            - $$cap_appname-uploads:/usr/src/app/public/uploads
-        restart: always
-        environment:
-            NODE_ENV: production
-            PORT: 3001
-            HOST: 0.0.0.0
-            INSTANCE_NAME: $$cap_fabrika_adi
-            INTERNAL_API_BASE_URL: $$cap_api_url
-            FRONTEND_ORIGIN: '*'
-            NEXBUS_FETCH_TIMEOUT_MS: $$cap_nexbus_timeout
-            UPLOAD_PROVIDER: $$cap_upload_provider
-        caproverExtra:
-            containerHttpPort: '3001'
-caproverOneClickApp:
-    variables:
-        - id: $$cap_drcore_version
-          label: DR Core Versiyon
-          defaultValue: latest
-          description: Docker Hub image versiyonu (latest veya 1.10.7 gibi)
-          validRegex: /^([^\s^\/])+$/
-        - id: $$cap_fabrika_adi
-          label: Fabrika Adi
-          defaultValue: ''
-          description: Fabrika kisa adi (kucuk harf, orn escon, akgida, hamidiye). Bu ad INSTANCE_NAME ve CDN klasoru olarak kullanilir.
-          validRegex: /^[a-z0-9-]+$/
-        - id: $$cap_api_url
-          label: NexBus API URL
-          defaultValue: http://172.17.0.1:5000/api
-          description: Bu fabrikaya ait NexBus API adresi. Her fabrika icin FARKLI port/adres olmali.
-        - id: $$cap_nexbus_timeout
-          label: NexBus Timeout (ms)
-          defaultValue: '8000'
-          description: NexBus API istek zaman asimi (milisaniye)
-        - id: $$cap_upload_provider
-          label: Upload Provider
-          defaultValue: cdn
-          description: Gorsel yukleme yontemi cdn (Datacenter CDN) veya local (container ici). CDN onerilir.
-          validRegex: /^(cdn|local)$/
-    instructions:
-        start: |-
-            DR Core UI - Endustriyel SCADA Dashboard.
-            Fabrika adini girin, NexBus API URL ayarlayin, deploy edin.
-            Persistent volume otomatik olusturulur.
-        end: |-
-            DR Core UI basariyla kuruldu!
-            Uygulama adresi: http://$$cap_appname.$$cap_root_domain
-            Sonraki adim: Admin panelinden GitHub config yukleyin.
-            INSTANCE_NAME: $$cap_fabrika_adi
-    displayName: DR Core UI
-    isOfficial: true
-    description: DR Core UI - Endustriyel SCADA Dashboard. Her fabrika icin ayri deploy edin.
-    documentation: https://github.com/zakeGit/DR_CoreUI
+{
+  "captainVersion": 4,
+  "services": {
+    "$$cap_appname": {
+      "image": "zakesoft/drcore:$$cap_drcore_version",
+      "volumes": [
+        "$$cap_appname-data:/usr/src/app/src/assets/data",
+        "$$cap_appname-uploads:/usr/src/app/public/uploads"
+      ],
+      "restart": "always",
+      "environment": {
+        "NODE_ENV": "production",
+        "PORT": "3001",
+        "HOST": "0.0.0.0",
+        "INSTANCE_NAME": "$$cap_fabrika_adi",
+        "INTERNAL_API_BASE_URL": "$$cap_api_url",
+        "FRONTEND_ORIGIN": "*",
+        "NEXBUS_FETCH_TIMEOUT_MS": "$$cap_nexbus_timeout",
+        "UPLOAD_PROVIDER": "$$cap_upload_provider"
+      },
+      "caproverExtra": {
+        "containerHttpPort": "3001"
+      }
+    }
+  },
+  "caproverOneClickApp": {
+    "variables": [
+      {
+        "id": "$$cap_drcore_version",
+        "label": "DR Core Versiyon",
+        "defaultValue": "latest",
+        "description": "Docker Hub image versiyonu (latest veya 1.10.7 gibi)",
+        "validRegex": "/^([^\\s^\\/])+$/"
+      },
+      {
+        "id": "$$cap_fabrika_adi",
+        "label": "Fabrika Adi",
+        "defaultValue": "",
+        "description": "Fabrika kisa adi (kucuk harf, orn escon, akgida, hamidiye). Bu ad INSTANCE_NAME ve CDN klasoru olarak kullanilir.",
+        "validRegex": "/^[a-z0-9-]+$/"
+      },
+      {
+        "id": "$$cap_api_url",
+        "label": "NexBus API URL",
+        "defaultValue": "http://172.17.0.1:5000/api",
+        "description": "Bu fabrikaya ait NexBus API adresi. Her fabrika icin FARKLI port/adres olmali."
+      },
+      {
+        "id": "$$cap_nexbus_timeout",
+        "label": "NexBus Timeout (ms)",
+        "defaultValue": "8000",
+        "description": "NexBus API istek zaman asimi (milisaniye)"
+      },
+      {
+        "id": "$$cap_upload_provider",
+        "label": "Upload Provider",
+        "defaultValue": "cdn",
+        "description": "Gorsel yukleme yontemi cdn (Datacenter CDN) veya local (container ici). CDN onerilir.",
+        "validRegex": "/^(cdn|local)$/"
+      }
+    ],
+    "instructions": {
+      "start": "DR Core UI - Endustriyel SCADA Dashboard.\nFabrika adini girin, NexBus API URL ayarlayin, deploy edin.\nPersistent volume otomatik olusturulur.",
+      "end": "DR Core UI basariyla kuruldu!\nUygulama adresi: http://$$cap_appname.$$cap_root_domain\nSonraki adim: Admin panelinden GitHub config yukleyin.\nINSTANCE_NAME: $$cap_fabrika_adi"
+    },
+    "displayName": "DR Core UI",
+    "isOfficial": true,
+    "description": "DR Core UI - Endustriyel SCADA Dashboard. Her fabrika icin ayri deploy edin.",
+    "documentation": "https://github.com/zakeGit/DR_CoreUI"
+  }
+}
