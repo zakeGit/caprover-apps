@@ -1,0 +1,11 @@
+{
+  "oneClickApps": [
+    {
+      "name": "drcore-ui",
+      "displayName": "DR Core UI",
+      "description": "Endüstriyel SCADA Dashboard - Fabrika adını girin, persistent volume otomatik",
+      "isOfficial": true,
+      "logoUrl": ""
+    }
+  ]
+}
