@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00d2ff"/>
+      <stop offset="100%" stop-color="#3a7bd5"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00e676"/>
+      <stop offset="100%" stop-color="#00c853"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffab40"/>
+      <stop offset="100%" stop-color="#ff6d00"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="256" height="256" rx="48" fill="url(#bg)"/>
+  <!-- Gauge arc (left) -->
+  <path d="M 68 160 A 48 48 0 1 1 148 160" stroke="url(#accent)" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.3"/>
+  <path d="M 68 160 A 48 48 0 0 1 108 112" stroke="url(#accent)" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <!-- Gauge needle -->
+  <line x1="108" y1="160" x2="92" y2="122" stroke="#00d2ff" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="108" cy="160" r="6" fill="#00d2ff"/>
+  <!-- Bar chart (right side) -->
+  <rect x="160" y="130" width="16" height="40" rx="3" fill="url(#green)" opacity="0.9"/>
+  <rect x="182" y="110" width="16" height="60" rx="3" fill="url(#accent)" opacity="0.9"/>
+  <rect x="204" y="90" width="16" height="80" rx="3" fill="url(#orange)" opacity="0.9"/>
+  <!-- "DR" text -->
+  <text x="128" y="68" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="36" fill="white" letter-spacing="4">DR</text>
+  <!-- Subtext -->
+  <text x="128" y="88" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="12" fill="#00d2ff" letter-spacing="6" opacity="0.8">CORE UI</text>
+  <!-- Bottom line decoration -->
+  <line x1="48" y1="196" x2="208" y2="196" stroke="url(#accent)" stroke-width="2" opacity="0.3"/>
+  <!-- Signal dots -->
+  <circle cx="56" cy="210" r="4" fill="#00e676" opacity="0.8"/>
+  <circle cx="72" cy="210" r="4" fill="#00e676" opacity="0.6"/>
+  <circle cx="88" cy="210" r="4" fill="#ffab40" opacity="0.5"/>
+  <!-- Factory chimney icon (small) -->
+  <rect x="170" y="204" width="6" height="16" rx="1" fill="#ffffff" opacity="0.3"/>
+  <rect x="182" y="208" width="8" height="12" rx="1" fill="#ffffff" opacity="0.3"/>
+  <rect x="196" y="200" width="6" height="20" rx="1" fill="#ffffff" opacity="0.3"/>
+  <!-- Smoke -->
+  <circle cx="173" cy="200" r="3" fill="#ffffff" opacity="0.15"/>
+  <circle cx="199" cy="194" r="4" fill="#ffffff" opacity="0.1"/>
+</svg>
