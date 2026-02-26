@@ -29,7 +29,7 @@
         "id": "$$cap_drcore_version",
         "label": "DR Core Versiyon",
         "defaultValue": "latest",
-        "description": "Docker Hub image versiyonu (latest veya 1.10.7 gibi)",
+        "description": "GHCR image versiyonu (latest veya 1.10.7 gibi)",
         "validRegex": "/^([^\\s^\\/])+$/"
       },
       {
