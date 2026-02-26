@@ -2,7 +2,7 @@
   "captainVersion": 4,
   "services": {
     "$$cap_appname": {
-      "image": "zakesoft/drcore:$$cap_drcore_version",
+      "image": "ghcr.io/zakegit/drcore:$$cap_drcore_version",
       "volumes": [
         "$$cap_appname-data:/usr/src/app/src/assets/data",
         "$$cap_appname-uploads:/usr/src/app/public/uploads"
