@@ -16,7 +16,9 @@
         "INTERNAL_API_BASE_URL": "$$cap_api_url",
         "FRONTEND_ORIGIN": "*",
         "NEXBUS_FETCH_TIMEOUT_MS": "$$cap_nexbus_timeout",
-        "UPLOAD_PROVIDER": "$$cap_upload_provider"
+        "UPLOAD_PROVIDER": "$$cap_upload_provider",
+        "GITHUB_TOKEN": "$$cap_github_token",
+        "GITHUB_REPO": "$$cap_github_repo"
       },
       "caproverExtra": {
         "containerHttpPort": "3001"
@@ -57,11 +59,23 @@
         "defaultValue": "cdn",
         "description": "Gorsel yukleme yontemi cdn (Datacenter CDN) veya local (container ici). CDN onerilir.",
         "validRegex": "/^(cdn|local)$/"
+      },
+      {
+        "id": "$$cap_github_token",
+        "label": "GitHub Token",
+        "defaultValue": "",
+        "description": "GitHub Personal Access Token (backup icin). Bos birakilabilir, sonra ayarlardan da girilebilir."
+      },
+      {
+        "id": "$$cap_github_repo",
+        "label": "GitHub Backup Repo",
+        "defaultValue": "",
+        "description": "GitHub backup repo (ornek: zakeGit/fabrika-backup). Bos birakilabilir."
       }
     ],
     "instructions": {
-      "start": "DR Core UI - Endustriyel SCADA Dashboard.\nFabrika adini girin, NexBus API URL ayarlayin, deploy edin.\nPersistent volume otomatik olusturulur.",
-      "end": "DR Core UI basariyla kuruldu!\nUygulama adresi: http://$$cap_appname.$$cap_root_domain\nSonraki adim: Admin panelinden GitHub config yukleyin.\nINSTANCE_NAME: $$cap_fabrika_adi"
+      "start": "DR Core UI - Endustriyel SCADA Dashboard.\nFabrika adini girin, NexBus API URL ayarlayin, deploy edin.\nGitHub Token ve Repo alanlari opsiyoneldir - bos birakilirsa admin panelinden de girilebilir.\nPersistent volume otomatik olusturulur.",
+      "end": "DR Core UI basariyla kuruldu!\nUygulama adresi: http://$$cap_appname.$$cap_root_domain\nINSTANCE_NAME: $$cap_fabrika_adi\n\nNot: HTTPS, HTTP yonlendirme ve WebSocket ayarlarini CapRover HTTP Ayarlari sekmesinden etkinlestirin."
     },
     "displayName": "DR Core UI",
     "isOfficial": true,
